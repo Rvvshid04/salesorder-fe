@@ -16,3 +16,8 @@ Due to limited familiarity with .NET Core, Clean Architecture, and SQL Server se
 - Completed API endpoints
 
 I’m happy to walk through the structure, thought process, and how I would complete the remaining parts.
+
+# Full Stack Submission
+
+Frontend: (this repo)
+Backend: https://github.com/rvvshid04/salesorder-be
