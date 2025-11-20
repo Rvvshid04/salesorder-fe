@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import SalesOrderTable from '../components/Table/SalesOrderTable';
-import CustomerDropdown from '../components/FormControls/CustomerDropdown';
-import AddressFields from '../components/FormControls/AddressFields';
-import SaveButton from '../components/Buttons/SaveButton';
+import SalesOrderTable from '../components/Table/SalesOrderTable.jsx';
+import CustomerDropdown from '../components/FormControls/CustomerDropdown.jsx';
+import AddressFields from '../components/FormControls/AddressFields.jsx';
+import SaveButton from '../components/Buttons/SaveButton.jsx';
 import { calculateExcl, calculateTaxAmount, calculateIncl } from '../utils/calculations';
 
 export default function SalesOrder() {
-  // Dummy customers
+  // fake customers
   const customers = [
     { id: 1, name: 'Alice Corp', address1:'123 Main St', address2:'', address3:'', suburb:'Downtown', state:'NY', postcode:'10001' },
     { id: 2, name: 'Bob Inc', address1:'456 Elm St', address2:'', address3:'', suburb:'Uptown', state:'CA', postcode:'90001' },
@@ -84,14 +84,91 @@ export default function SalesOrder() {
       <AddressFields addresses={addresses} onChange={handleAddressChange} />
 
       <div className="mt-4 grid grid-cols-3 gap-2 mb-4">
-        <input name="itemCode" value={itemForm.itemCode} onChange={handleItemChange} placeholder="Item Code" className="border px-2 py-1 rounded" />
-        <input name="description" value={itemForm.description} onChange={handleItemChange} placeholder="Description" className="border px-2 py-1 rounded" />
-        <input name="note" value={itemForm.note} onChange={handleItemChange} placeholder="Note" className="border px-2 py-1 rounded" />
-        <input type="number" name="quantity" value={itemForm.quantity} onChange={handleItemChange} placeholder="Quantity" className="border px-2 py-1 rounded" />
-        <input type="number" name="price" value={itemForm.price} onChange={handleItemChange} placeholder="Price" className="border px-2 py-1 rounded" />
-        <input type="number" name="tax" value={itemForm.tax} onChange={handleItemChange} placeholder="Tax %" className="border px-2 py-1 rounded" />
-      </div>
+        <div>
+          <label htmlFor="itemCode" className="block mb-1 font-semibold">Item Code</label>
+          <input
+            type="text"
+            id="itemCode"
+            name="itemCode"
+            value={itemForm.itemCode}
+            onChange={handleItemChange}
+            placeholder="Item Code"
+            className="border px-2 py-1 rounded w-full"
+          />
+        </div>
 
+        <div>
+          <label htmlFor="description" className="block mb-1 font-semibold">Description</label>
+          <input
+            type="text"
+            id="description"
+            name="description"
+            value={itemForm.description}
+            onChange={handleItemChange}
+            placeholder="Description"
+            className="border px-2 py-1 rounded w-full"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="note" className="block mb-1 font-semibold">Note</label>
+          <input
+            type="text"
+            id="note"
+            name="note"
+            value={itemForm.note}
+            onChange={handleItemChange}
+            placeholder="Note"
+            className="border px-2 py-1 rounded w-full"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="quantity" className="block mb-1 font-semibold">Quantity</label>
+          <input
+            type="number"
+            id="quantity"
+            name="quantity"
+            value={itemForm.quantity}
+            onChange={handleItemChange}
+            placeholder="Quantity"
+            min="0"
+            className="border px-2 py-1 rounded w-full"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="price" className="block mb-1 font-semibold">Price</label>
+          <input
+            type="number"
+            id="price"
+            name="price"
+            value={itemForm.price}
+            onChange={handleItemChange}
+            placeholder="Price"
+            min="0"
+            step="0.01"
+            className="border px-2 py-1 rounded w-full"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="tax" className="block mb-1 font-semibold">Tax %</label>
+          <input
+            type="number"
+            id="tax"
+            name="tax"
+            value={itemForm.tax}
+            onChange={handleItemChange}
+            placeholder="Tax %"
+            min="0"
+            step="0.01"
+            className="border px-2 py-1 rounded w-full"
+          />
+        </div>
+
+      </div>
+      
       <button onClick={addItem} className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition mb-4">Add Item</button>
 
       <SalesOrderTable orderItems={orderItems} />

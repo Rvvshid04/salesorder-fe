@@ -1,6 +1,6 @@
 import React from 'react';
 
-// Dummy item descriptions (replace with API call to backend later)
+// replace with API call to backend later
 const items = [
   { code: 'A001', description: 'Widget A' },
   { code: 'B002', description: 'Widget B' },

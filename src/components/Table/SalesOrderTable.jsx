@@ -1,5 +1,5 @@
 import React from 'react';
-import TableRow from './TableRow';
+import TableRow from './TableRow.jsx';
 
 export default function SalesOrderTable({ orderItems }) {
   return (

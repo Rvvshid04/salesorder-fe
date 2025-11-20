@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Orders() {
-  // Dummy data for demonstration
+  // sample data for demonstration
   const [orders, setOrders] = useState([
     {
       id: 1,
@@ -35,7 +35,7 @@ export default function Orders() {
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-2xl font-bold">Sales Orders</h1>
         <Link
-          to="/orders/new"
+          to="/orders"
           className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
         >
           Add New

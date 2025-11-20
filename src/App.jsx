@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-import SalesOrdersPage from './pages/SalesOrdersPage';
-import Home from './pages/Home';
+import SalesOrder from './pages/SalesOrders.jsx';
+import Home from './pages/Home.jsx';
 
 export default function App() {
   return (
@@ -12,7 +12,7 @@ export default function App() {
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/orders" element={<SalesOrdersPage />} />
+        <Route path="/orders" element={<SalesOrder/>} />
       </Routes>
     </div>
   );
