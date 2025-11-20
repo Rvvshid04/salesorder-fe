@@ -6,13 +6,14 @@ Due to limited familiarity with .NET Core, Clean Architecture, and SQL Server se
 
 **What is included:**
 - Clean Architecture layout (API / Application / Domain / Infrastructure)
-- Initial model and controller stubs
 - DbContext setup (incomplete)
 - Frontend components and UI layout
+- Repository + service implementations
 
 **What remains:**
 - Database integration
-- Repository + service implementations
-- Completed API endpoints
+- API functionality
 
-I’m happy to walk through the structure, thought process, and how I would complete the remaining parts.
+# Full Stack Submission
+Frontend: (this repo)
+Backend: https://github.com/rvvshid04/salesorder-be
